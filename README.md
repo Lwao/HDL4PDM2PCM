@@ -14,7 +14,7 @@ Figure 1 - PDM to PCM conversion pipeline.
 </p>
 
 <p align="center">
-    <img src="docs/img/system-PDM.jpg" alt="drawing" style="width:300px;" />
+    <img src="docs/img/system-PDM.jpg" alt="drawing" style="width:80%;" />
 </p>
 
 The figures 2 and 3 respectively illustrates the CIC and FIR filter absic architecture.
@@ -25,7 +25,7 @@ Figure 2 - CIC decimator basic architecture.
 </p>
 
 <p align="center">
-    <img src="docs/img/system-CIC.jpg" alt="drawing" style="width:300px;" />
+    <img src="docs/img/system-CIC.jpg" alt="drawing" style="width:80%;" />
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@ Figure 3 - FIR filter basic architecture.
 </p>
 
 <p align="center">
-    <img src="docs/img/system-FIR.jpg" alt="drawing" style="width:300px;" />
+    <img src="docs/img/system-FIR.jpg" alt="drawing" style="width:80%;" />
 </p>
 
 ## System
@@ -47,7 +47,7 @@ Figure 4 - Hardware interfaces for the PDM2PCM system.
 </p>
 
 <p align="center">
-    <img src="docs/img/system-Sys.jpg" alt="drawing" style="width:300px;" />
+    <img src="docs/img/system-Sys.jpg" alt="drawing" style="width:80%;" />
 </p>
 
 The figure 4 proposes that the processor summons a SPI interface with a SD card to store the data. But the data's output could be dealt with a DAC feeding a speaker if the user wants to listen to the microphone processed audio.
