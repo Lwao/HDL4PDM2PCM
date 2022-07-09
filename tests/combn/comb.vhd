@@ -6,7 +6,7 @@ entity comb is
 	generic (n : integer := 32);
 	port(
 		clk, en, rst: in std_logic;
-	    input: in std_logic_vector (n-1 downto 0);
+	   input: in std_logic_vector (n-1 downto 0);
 		diff_delay: in std_logic_vector (1 downto 0);
 		output: buffer std_logic_vector (n-1 downto 0)
 		);
