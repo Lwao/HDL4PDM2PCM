@@ -17,7 +17,7 @@ Figure 1 - PDM to PCM conversion pipeline.
     <img src="docs/img/system-PDM.jpg" alt="drawing" style="width:80%;" />
 </p>
 
-The figures 2 and 3 respectively illustrates the CIC and FIR filter absic architecture.
+The figures 2 and 3 respectively illustrates the CIC and FIR filter basic architecture.
 
 
 <p align="center">
