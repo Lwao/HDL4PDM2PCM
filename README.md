@@ -51,3 +51,10 @@ Figure 4 - Hardware interfaces for the PDM2PCM system.
 </p>
 
 The figure 4 proposes that the processor summons a SPI interface with a SD card to store the data. But the data's output could be dealt with a DAC feeding a speaker if the user wants to listen to the microphone processed audio.
+
+## References
+
+- [[Nios II] Writing and Reading files from SD Cards – Part 1](https://infraledblog.wordpress.com/2016/02/17/nios-ii-writing-and-reading-files-from-sd-cards-part-1/)
+- [Setting up the NIOS II in Eclipse on the DE1-SoC](https://www.youtube.com/watch?v=UYNFMD8jK9U)
+- [SD Card Interfacing](https://sites.ualberta.ca/~delliott/ece492/appnotes/2013w/SD_card_interfacing/)
+- [Simple SD Card Interfacing](http://robkaram.com/simple-sd-card-interfacing/)
