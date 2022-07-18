@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="output_interface">
+		<CBX_INST_ENTRY INSTANCE_NAME="|output_interface|output_interface_fifo:FIFOOP|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_5361.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
