@@ -10,31 +10,15 @@
 
 void app_main()
 {
-    i2s_write(I2S_PORT_NUM, (void*) data, DATA_BUFFER_SIZE, &bytes_written, portMAX_DELAY);
-    // fill data buffer
-    // for(int ii=0; ii<DMA_BUF_LEN_SMPL; ii++)
-    // {
-    //     if(ii%2) data[ii] = 0x01234567;
-    //     else data[ii] = 0x89ABCDEF;
-    // }
-
-    // configure i2s
-    periph_module_enable(PERIPH_I2S0_MODULE);
-    ESP_ERROR_CHECK(i2s_driver_install(I2S_PORT_NUM, &i2s_config, 0, NULL));
-    ESP_ERROR_CHECK(i2s_set_pin(I2S_PORT_NUM, &i2s_pins));
-    ESP_ERROR_CHECK(i2s_start(I2S_PORT_NUM));
-
-    // xTaskCreatePinnedToCore(vTaskTX, "task_tx", 8192, NULL, configMAX_PRIORITIES-1, &xTaskTX, PRO_CPU_NUM);
-
-    vTaskDelete(NULL);
+    // configure gpio pins
+    ESP_ERROR_CHECK(gpio_config(&out_conf));                          // initialize data pin 
+    ESP_ERROR_CHECK(gpio_config(&in_conf));                           // initialize clock pin 
+    ESP_ERROR_CHECK(gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT)); // install gpio isr service
+    ESP_ERROR_CHECK(gpio_isr_handler_add(CLOCK_PIN, ISR_BTN, NULL));  // hook isr handler for clock pin
 }
 
-void vTaskTX(void * pvParameters)
+static void IRAM_ATTR ISR_BTN()
 {
-    while(1)
-    {
-        i2s_write(I2S_PORT_NUM, (void*) data, DATA_BUFFER_SIZE, &bytes_written, portMAX_DELAY);
-        vTaskDelay(pdMS_TO_TICKS(1));
-    }
+    gpio_set_level(DATA_PIN, data[cnt % BUFFER_LEN]);
+    cnt++;
 }
-
